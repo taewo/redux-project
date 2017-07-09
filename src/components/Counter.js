@@ -33,10 +33,13 @@ class Counter extends Component {
     const style = {
       background: `rgb(${color[0]}, ${color[1]}, ${color[2]})`
     };
-
-
+    const style1 = {
+      background: 'rgb(233, 233, 233)'
+    }
+    console.log(1, style)
+    console.log(2, style1)
     return (
-      <div style={style}>
+      <div style={style1}>
         <Value number={this.props.number} />
         <Control
           onPlus={this.props.handleIncrement}

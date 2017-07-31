@@ -11,6 +11,7 @@ const initialState = {
 
 function counter(state = initialState, action) {
   const {counters} = state;
+  console.log(1, counters);
   switch (action.type) {
     case types.CREATE:
       return {
@@ -32,7 +33,7 @@ function counter(state = initialState, action) {
           ...counters.slice(0, action.index),
           {
             ...counters[action.index],
-            number: counters[action.index] + 1,
+            number: counters[action.index].number + 1,
           },
           ...counters.slice(action.index+1, counters.length)
         ]
@@ -40,7 +41,7 @@ function counter(state = initialState, action) {
     case types.DECREMENT:
       return {
         counters: [
-          ...counters.slice(0, counters.length),
+          ...counters.slice(0, action.index),
           {
             ...counters[action.index],
             number: counters[action.index].number -1
@@ -60,7 +61,7 @@ function counter(state = initialState, action) {
         ]
       }
     default:
-      return counters;
+      return state;
   }
 }
 

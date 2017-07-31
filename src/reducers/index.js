@@ -60,6 +60,13 @@ function counter(state = initialState, action) {
           ...counters.slice(action.index+1, counters.length)
         ]
       }
+    case types.DELETE:
+      return {
+        counters: [
+          ...counters.slice(0, action.index),
+          ...counters.slice(action.index+1, counters.length)
+        ]
+      }
     default:
       return state;
   }

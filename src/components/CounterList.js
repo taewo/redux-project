@@ -3,7 +3,7 @@ import Counter from './Counter';
 import PropTypes from 'prop-types';
 import './CounterList.css';
 
-const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
+const CounterList = ({counters, onIncrement, onDecrement, onSetColor, onDelete}) => {
 
   const counterList = counters.map((counter, i) => {
     console.log(1, counters)
@@ -15,6 +15,7 @@ const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
         onIncrement={onIncrement}
         onDecrement={onDecrement}
         onSetColor={onSetColor}
+        onDelete={onDelete}
       />
     )
   })
@@ -25,16 +26,16 @@ const CounterList = ({counters, onIncrement, onDecrement, onSetColor}) => {
     </div>
   )
 }
-
-CounterList.propTypes = {
-    counters: PropTypes.arrayOf(PropTypes.shape({
-        color: PropTypes.string,
-        number: PropTypes.number
-    })),
-    onIncrement: PropTypes.func,
-    onDecrement: PropTypes.func,
-    onSetColor: PropTypes.func
-};
+//
+// CounterList.propTypes = {
+//     counters: PropTypes.arrayOf(PropTypes.shape({
+//         color: PropTypes.string,
+//         number: PropTypes.number
+//     })),
+//     onIncrement: PropTypes.func,
+//     onDecrement: PropTypes.func,
+//     onSetColor: PropTypes.func
+// };
 
 CounterList.defaultProps = {
     counters: [],

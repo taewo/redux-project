@@ -13,7 +13,8 @@ const mapDispatchToProps = (dispatch) => ({
   onSetColor: (index) => {
     const color = getRandomColor();
     dispatch(actions.setColor({index, color}))
-  }
+  },
+  onDelete: (index) => dispatch(actions.deletee(index)),
 })
 
 const CounterListContainer = connect(

@@ -5,6 +5,11 @@ export const increment = (index) => ({
   index
 });
 
+export const deletee = (index) => ({
+  type: types.DELETE,
+  index,
+})
+
 export const decrement = (index) => ({
   type: types.DECREMENT,
   index,

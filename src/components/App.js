@@ -1,26 +1,17 @@
-import React, { Component, PropTypes } from 'react';
-import Counter from './Counter';
-
-const propTypes = {
-};
-
-const defaultProps = {
-};
+import React, { Component } from 'react';
+import Buttons from './Buttons';
+import CounterList from './CounterList';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
         App
-        <Counter/>
+        <Buttons />
+        <CounterList />
       </div>
     );
   }
 }
-App.propTypes = propTypes;
-App.defaultProps = defaultProps;
 
 export default App;
